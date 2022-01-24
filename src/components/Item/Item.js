@@ -1,6 +1,6 @@
 import './Item.css';
 
-const ItemCard = ({id, name, description, price}) => {
+const Item = ({id, name, description, price}) => {
     return (
         <>
             <div className='card'>
@@ -17,4 +17,4 @@ const ItemCard = ({id, name, description, price}) => {
 };
 
 
-export default ItemCard;
+export default Item;

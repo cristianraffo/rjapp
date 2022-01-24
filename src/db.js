@@ -2,10 +2,12 @@ export const products = [
     {
         "id": 0,
         "name": "Zapatillas",
-        "price": 25000,
+        "price": 45000,
         "description": "Son zapatillas",
         "stock": 100,
-        "img": "https://picsum.photos/200/300"
+        "colour": "Negra, roja, verde",
+        "img": "https://picsum.photos/200/300",
+        "longDescription": "Son zapatillas muy caras."
     },
     {
         "id": 1,
@@ -13,7 +15,10 @@ export const products = [
         "price": 2000,
         "description": "Son remeras",
         "stock": 100,
-        "img": "https://picsum.photos/200/300"
+        "colour": "Negra",
+        "Talle": "",
+        "img": "https://picsum.photos/200/300",
+        "longDescription": "Remera economica marca naik"
     },
     {
         "id": 2,
@@ -21,7 +26,9 @@ export const products = [
         "price": 6000,
         "description": "Son pantalones",
         "stock": 100,
-        "img": "https://picsum.photos/200/300"
+        "colour": "Rojo",
+        "img": "https://picsum.photos/200/300",
+        "longDescription": "Confeccionado en tejido suave y luce un corte clásico."
     },
     {
         "id": 3,
@@ -29,7 +36,9 @@ export const products = [
         "price": 5000,
         "description": "Son gorras",
         "stock": 100,
-        "img": "https://picsum.photos/200/300"
+        "colour": "Azul",
+        "img": "https://picsum.photos/200/300",
+        "longDescription": "Gorra con visera"
     }
 ]
 

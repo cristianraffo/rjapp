@@ -23,12 +23,27 @@
     object-fit: cover;
 }
 
+.card-stock {
+    text-align: center;
+    font-size: 800;
+}
+
 .card-title {
     padding-top: 1rem;
+    text-align: center;
 }
 
 .card-description {
     padding-top: 0 1rem;
+    text-align: center;
+}
+
+.card-price {
+    text-align: center;
+}
+
+.card-color {
+    text-align: center;
 }
 
 .card-btn {

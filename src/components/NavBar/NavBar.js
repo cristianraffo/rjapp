@@ -15,9 +15,9 @@ const NavBar = () => {
             </div>
             <div className="collapse navbar-collapse flex-grow-1 text-center justify-content-center" id="navbarCollapse">
                 <ul className="navbar-nav">
-                    <li className="navbar-item"><a className="navbar-link" href="#first-project">New Arrivals</a></li>
-                    <li className="navbar-item"><a className="navbar-link" href="about.html">Stores</a></li>
-                    <li className="navbar-item"><a className="navbar-link" href="#contact">Contact</a></li>                
+                    <li className="navbar-item"><a className="navbar-link" href="">New Arrivals</a></li>
+                    <li className="navbar-item"><a className="navbar-link" href="">Stores</a></li>
+                    <li className="navbar-item"><a className="navbar-link" href="">Contact</a></li>                
                 </ul>
                 <CartWidget /> 
             </div>

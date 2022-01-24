@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemCount from './components/ItemCount/ItemCount';
 import Itemlist from './components/ItemList/ItemList';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
 
       <div className='wrapper'>
         <ItemListContainer />
-        <ItemCount/>
+        <br/>
+        <ItemDetailContainer />        
       </div>
     </>
   );

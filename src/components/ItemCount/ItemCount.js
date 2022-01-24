@@ -22,7 +22,7 @@ export default function ItemCount() {
         <>
             <div className='counter-container'>
                 <button onClick={removeItem} className='btn-counter'>-</button>
-                <p className='count'>Quantity: {count}</p>
+                <p className='count'>Qty: {count}</p>
                 <button onClick={addItem} className='btn-counter'>+</button>
             </div>            
         </>
