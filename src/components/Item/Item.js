@@ -1,4 +1,4 @@
-import './ItemCard.css';
+import './Item.css';
 
 const ItemCard = ({id, name, description, price}) => {
     return (
@@ -10,10 +10,11 @@ const ItemCard = ({id, name, description, price}) => {
                     <p className='card-description'>{description}</p>
                     <p className='card-price'>Price: {price}</p>
                 </div>
-                <button className='card-btn'>Buy</button>
+                <button className='card-btn'>Details</button>
             </div>
         </>
     );
 };
+
 
 export default ItemCard;
