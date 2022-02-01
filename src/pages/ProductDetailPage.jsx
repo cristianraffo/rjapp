@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ItemCount from "../components/ItemCount/ItemCount";
+import "./ProductDetailPage.css";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
@@ -17,11 +19,27 @@ const ProductDetailPage = () => {
 
   if (isLoading || !product) return <p>Loading...</p>;
   return (
-    <div>
-      <h1>{product.name}</h1>
-      <img src={product.img} alt={product.name} />
-      <p>{product.description}</p>
-      <p>{product.price}</p>
+    <div className="wrapper">
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title">{product.name}</h2>
+          <img className="card-img" src={product.img} alt={product.name} />
+          <p className="card-long">{product.longDescription}</p>
+          <p className="card-price">Price: ${product.price}</p>
+          <p className="card-stock">Stock: {product.stock}</p>
+          <p className="card-color">
+            Color:
+            <select>
+              <option>Red</option>
+              <option>Green</option>
+              <option>Black</option>
+            </select>
+          </p>
+        </div>
+
+        <ItemCount />
+        <button className="buy-btn">Buy</button>
+      </div>
     </div>
   );
 };

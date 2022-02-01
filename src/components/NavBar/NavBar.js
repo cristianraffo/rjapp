@@ -17,7 +17,7 @@ const NavBar = () => {
             <div className="collapse navbar-collapse flex-grow-1 text-center justify-content-center" id="navbarCollapse">
                 <ul className="navbar-nav">
                     <Link className="navbar-item navbar-link" to="/">Home</Link>
-                    <Link className="navbar-item navbar-link" to="/item">Products</Link>
+                    <Link className="navbar-item navbar-link" to="/products">Products</Link>
                     <Link className="navbar-item navbar-link" to="/contact">Contact</Link>                
                 </ul>
                 <CartWidget /> 

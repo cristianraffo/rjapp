@@ -2,7 +2,7 @@ import Item from "../Item/Item";
 import { useState, useEffect } from "react";
 import LoadingSpinner from "../LoadingSpinner/Spinner";
 
-const URL = "http://localhost:3000/products";
+const URL = "http://localhost:3001/products";
 
 const ItemContainer = () => {
   const [products, setProducts] = useState([]);

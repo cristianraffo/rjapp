@@ -4,8 +4,8 @@ const HomePage = () => {
   let navigate = useNavigate();
 
   const goToProducts = () => {
-    const logueado = true;
-    if (logueado) {
+    const loggedIn = true;
+    if (loggedIn) {
       navigate("/products");
     } else {
       navigate("/");
@@ -13,9 +13,8 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      <h1>HomePage</h1>
-      <button onClick={goToProducts}>Go to products page</button>
+    <div className="wrapper">      
+      <button className="buy-btn" onClick={goToProducts}>Go to products page</button>
     </div>
   );
 };
