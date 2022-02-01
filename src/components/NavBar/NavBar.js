@@ -1,12 +1,13 @@
 import './NavBar.css';
 import CartWidget from '../CartWidget/CartWidget.js';
+import { Link } from 'react-router-dom'
 
 
 const NavBar = () => {
     return <>
         <nav className="navbar fixed-top navbar-expand-lg">
             <div className="navbar-logo-container">
-                <a className="navbar-logo" href="./">CRISTIAN RAFFO</a>
+                <Link className="navbar-logo" to="./">CRISTIAN RAFFO</Link>
                 <div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -15,9 +16,9 @@ const NavBar = () => {
             </div>
             <div className="collapse navbar-collapse flex-grow-1 text-center justify-content-center" id="navbarCollapse">
                 <ul className="navbar-nav">
-                    <li className="navbar-item"><a className="navbar-link" href="">New Arrivals</a></li>
-                    <li className="navbar-item"><a className="navbar-link" href="">Stores</a></li>
-                    <li className="navbar-item"><a className="navbar-link" href="">Contact</a></li>                
+                    <Link className="navbar-item navbar-link" to="/">Home</Link>
+                    <Link className="navbar-item navbar-link" to="/item">Products</Link>
+                    <Link className="navbar-item navbar-link" to="/contact">Contact</Link>                
                 </ul>
                 <CartWidget /> 
             </div>

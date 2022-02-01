@@ -2,16 +2,20 @@ import { products } from "../../db";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
-const ItemDetail = (details) => {
+const ItemDetail = () => {
   return (
     <>
-      {products.map((det) => {
+      {products.map((item) => {
         return (
           <div className="card">
             <div className="card-body">
-              <img src="https://picsum.photos/200/300" className="card-img" />
-              <h2 className="card-title">{det.name}</h2>
-              <p className="card-stock">Stock: {det.stock}</p>
+              <img
+                src="https://picsum.photos/200/300"
+                className="card-img"
+                alt={item.name}
+              />
+              <h2 className="card-title"> {item.name}</h2>
+              <p className="card-stock">Stock: {item.stock}</p>
               <p className="card-color">
                 Color:
                 <select>
@@ -20,8 +24,8 @@ const ItemDetail = (details) => {
                   <option>Black</option>
                 </select>
               </p>
-              <p className="card-price">Price: $ {det.price}</p>
-              <p className="card-long">{det.longDescription}</p>
+              <p className="card-price">Price: $ {item.price}</p>
+              <p className="card-long">{item.longDescription}</p>
             </div>
             <ItemCount />
             <button className="buy-btn">Buy</button>

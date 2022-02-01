@@ -1,6 +1,6 @@
+import Item from "../Item/Item";
 import { useState, useEffect } from "react";
 import { getProducts } from "../../db";
-import Item from "../Item/Item";
 import LoadingSpinner from "../LoadingSpinner/Spinner";
 
 const ItemListContainer = () => {
@@ -9,6 +9,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     setLoading(true);
+
     getProducts()
       .then((res) => setProducts(res))
       .catch((err) => console.log(err))
@@ -17,18 +18,9 @@ const ItemListContainer = () => {
 
   return (
     <>
-      {loading ? (
-        <LoadingSpinner />
-      ) : (
-        products.map((product) => (
-          <Item
-            key={product.id}
-            name={product.name}
-            price={product.price}
-            description={product.description}
-          />
-        ))
-      )}
+      <div className="wrapper">
+        {loading ? <LoadingSpinner /> : <Item key={products.id} />}
+      </div>
     </>
   );
 };
