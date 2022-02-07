@@ -6,38 +6,38 @@
         "price": 45000,
         "img": "https://picsum.photos/200/300",
         "description": "Son zapatillas",
-        "stock": 100,
         "colour": "Negra, roja, verde",
+        "quantity": 1,
         "longDescription": "Son zapatillas muy caras."
     },
     {
         "id": 1,
-        "name": "Remeras",
-        "price": 2000,
+        "name": "Zapatillas 2",
+        "price": 20000,
         "img": "https://picsum.photos/200/300",
         "description": "Son remeras",
-        "stock": 100,
+        "quantity": 1,
         "colour": "Negra",
         "Talle": "",
         "longDescription": "Remera economica marca naik"
     },
     {
         "id": 2,
-        "name": "Pantalones",
-        "price": 6000,
+        "name": "Zapatillas 3",
+        "price": 26000,
         "img": "https://picsum.photos/200/300",
         "description": "Son pantalones",
-        "stock": 100,
+        "quantity": 1,
         "colour": "Rojo",
         "longDescription": "Confeccionado en tejido suave y luce un corte clásico."
     },
     {
         "id": 3,
-        "name": "Gorras",
-        "price": 5000,
+        "name": "Zapatillas 4",
+        "price": 35000,
         "img": "https://picsum.photos/200/300",
         "description": "Son gorras",
-        "stock": 100,
+        "quantity": 1,
         "colour": "Azul",
         "longDescription": "Gorra con visera"
     }

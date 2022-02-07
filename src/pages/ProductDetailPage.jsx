@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "../components/ItemCount/ItemCount";
+import LoadingSpinner from "../components/LoadingSpinner/Spinner";
+import { useCart } from "../context/CartContext";
 import "./ProductDetailPage.css";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const { cart, addItem } = useCart();
+  const [count, setCount] = useState(1);
 
   useEffect(() => {
     const URL = `http://localhost:3001/products/${productId}`;
@@ -17,7 +21,11 @@ const ProductDetailPage = () => {
       .finally(() => setIsLoading(false));
   }, [productId]);
 
-  if (isLoading || !product) return <p>Loading...</p>;
+  const handleClick = () => {
+    addItem(product, count);
+  };
+
+  if (isLoading || !product) return <LoadingSpinner />;
   return (
     <div className="wrapper">
       <div className="card">
@@ -37,8 +45,10 @@ const ProductDetailPage = () => {
           </p>
         </div>
 
-        <ItemCount />
-        <button className="buy-btn">Buy</button>
+        <ItemCount count={count} setCount={setCount}/>
+        <button className="buy-btn" onClick={handleClick}>
+          Buy
+        </button>
       </div>
     </div>
   );
