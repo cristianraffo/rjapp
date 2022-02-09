@@ -1,21 +1,32 @@
 import Item from "../Item/Item";
 import { useState, useEffect } from "react";
 import LoadingSpinner from "../LoadingSpinner/Spinner";
-
-const URL = "http://localhost:3001/products";
+import { getFirestore } from "../../firebase";
 
 const ItemContainer = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [products, setProduct] = useState([]);
+  const [loading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);
-    fetch(URL)
-      .then((res) => res.json())
-      .then((json) => setProducts(json))
-      .catch((err) => setError(err))
-      .finally(() => setLoading(false));
+    const db = getFirestore();
+    const productsCollection = db.collection("products");
+
+    const getDataFromFirestore = async () => {
+      setIsLoading(true);
+      try {
+        const response = await productsCollection.get();
+        if (response.empty) {
+          console.log("No hay productos");
+        }
+        setProduct(response.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      } catch (err) {
+        setError(err);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    getDataFromFirestore();
   }, []);
 
   if (loading) {

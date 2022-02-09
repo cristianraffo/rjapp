@@ -3,21 +3,30 @@ import { useParams } from "react-router-dom";
 import ItemCount from "../components/ItemCount/ItemCount";
 import LoadingSpinner from "../components/LoadingSpinner/Spinner";
 import { useCart } from "../context/CartContext";
+import { getFirestore } from "../firebase";
 import "./ProductDetailPage.css";
 
 const ProductDetailPage = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState();
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
   const { cart, addItem } = useCart();
   const [count, setCount] = useState(1);
 
   useEffect(() => {
-    const URL = `http://localhost:3001/products/${productId}`;
+    const db = getFirestore();
+    const productsCollection = db.collection("products");
+    const selectedProduct = productsCollection.doc(productId);
+
     setIsLoading(true);
-    fetch(URL)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
+    selectedProduct
+      .get()
+      .then((res) => {
+        if (!res.exists) console.log("El producto no existe");
+        setProduct({ ...res.data(), id: res.id });
+      })
+      .catch((err) => setError(err))
       .finally(() => setIsLoading(false));
   }, [productId]);
 
@@ -45,7 +54,7 @@ const ProductDetailPage = () => {
           </p>
         </div>
 
-        <ItemCount count={count} setCount={setCount}/>
+        <ItemCount count={count} setCount={setCount} />
         <button className="buy-btn" onClick={handleClick}>
           Buy
         </button>

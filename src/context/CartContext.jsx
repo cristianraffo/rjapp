@@ -32,8 +32,30 @@ export const CartProvider = ({ children }) => {
     Swal.fire("Cart is empty");
   };
 
+  const sumQuantity = () => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.quantity;
+    });
+    return sum;
+  };
+
+  const subTotal = (price, quantity) => {
+    return price * quantity;
+  };
+
+  const sumTotal = () => {
+    let sum = 0;
+    cart.forEach((item) => {
+      sum += item.quantity * item.price;
+    });
+    return sum;
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
+    <CartContext.Provider
+      value={{ cart, addItem, removeItem, clearCart, sumQuantity, subTotal, sumTotal }}
+    >
       {children}
     </CartContext.Provider>
   );
