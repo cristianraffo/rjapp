@@ -6,8 +6,11 @@
 ### Replicate project using git bash:
 
 git clone https://github.com/cristianraffo/rjapp.git
+
 cd rjapp-master
+
 npm install
+
 npm start
 
 ** Remove .example from .env.example file to use database credentials.
