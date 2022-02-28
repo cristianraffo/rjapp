@@ -1,0 +1,35 @@
+.error {
+  height: 100vh;
+  background: url("../../public/404-back.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.error-title {
+  font-size: 5em;
+  font-weight: 400;
+  color: grey;
+}
+
+.error-subtitle {
+  font-size: 2em;
+  font-weight: 500;
+  color: grey;
+}
+
+.error-link {
+  color: #019fb6;
+  font-weight: 500;
+}
+
+.error-link:hover {
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .rror-title {
+    font-size: 3em;
+  }
+  .error-subtitle {
+    font-size: 1.7em;
+  }
+}
