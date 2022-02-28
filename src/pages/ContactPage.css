@@ -1,0 +1,40 @@
+.form {
+  display: flex;
+  min-height: 56vh;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-text {
+  color: #919191;
+}
+
+.textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.form-label {
+  color: #919191;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.btn {
+  border: none;
+  padding: 0.8rem 2.1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffffff;
+  border: 1px solid #019fb6;
+  color: #191a1d;
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 export const CartContext = createContext([]);
@@ -28,14 +28,14 @@ export const CartProvider = ({ children }) => {
   };
 
   const clearCart = () => {
-    setCart([]);
-    Swal.fire("Cart is empty");
+    setCart([]);    
   };
+
 
   const sumQuantity = () => {
     let sum = 0;
-    cart.forEach((item) => {
-      sum += item.quantity;
+    cart.forEach((order) => {
+      sum += order.quantity;
     });
     return sum;
   };
@@ -54,7 +54,15 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addItem, removeItem, clearCart, sumQuantity, subTotal, sumTotal }}
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clearCart,
+        sumQuantity,
+        subTotal,
+        sumTotal,
+      }}
     >
       {children}
     </CartContext.Provider>
@@ -62,3 +70,20 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCart = () => useContext(CartContext);
+
+// const addItem = (product) => {
+//   if (cart.find((item) => item.id === product.id)) {
+//     setCart(
+//       cart.map((item) =>
+//         item.id === product.id
+//           ? {
+//               ...item,
+//               quantity: item.quantity + product.quantity,
+//             }
+//           : item
+//       )
+//     );
+//   } else {
+//     setCart([...cart, product]);
+//   }
+// };

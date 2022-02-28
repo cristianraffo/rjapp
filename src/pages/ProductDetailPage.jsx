@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemCount from "../components/ItemCount/ItemCount";
 import LoadingSpinner from "../components/LoadingSpinner/Spinner";
-import { useCart } from "../context/CartContext";
 import { getFirestore } from "../firebase";
+import { useCart } from "../context/CartContext";
 import "./ProductDetailPage.css";
 
 const ProductDetailPage = () => {
@@ -44,17 +44,9 @@ const ProductDetailPage = () => {
           <p className="card-long">{product.longDescription}</p>
           <p className="card-price">Price: ${product.price}</p>
           <p className="card-stock">Stock: {product.stock}</p>
-          <p className="card-color">
-            Color:
-            <select>
-              <option>Red</option>
-              <option>Green</option>
-              <option>Black</option>
-            </select>
-          </p>
         </div>
 
-        <ItemCount count={count} setCount={setCount} />
+        <ItemCount initial={1}stock={product.stock} />
         <button className="buy-btn" onClick={handleClick}>
           Buy
         </button>

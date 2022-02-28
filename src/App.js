@@ -6,6 +6,8 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProductsPage from "./pages/ProductsPage";
 import CartPage from "./pages/CartPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import ContactPage from "./pages/ContactPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
 
@@ -22,7 +24,9 @@ function App() {
               <Route index element={<ProductsPage />} />
               <Route path=":productId" element={<ProductDetailPage />} />
             </Route>
+            <Route path="contact" element={<ContactPage />} />
             <Route path="cart" element={<CartPage />} />
+            <Route path="checkout/:orderId" element={<CheckoutPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

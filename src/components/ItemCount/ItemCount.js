@@ -1,17 +1,17 @@
 import { useState } from "react";
+import { useContext } from "react";
+import { useCart } from "../../context/CartContext";
 import "./ItemCount.css";
 
-export default function ItemCount({ count, setCount }) {
+function ItemCount({ initial, stock, onAdd }) {
+  const [count, setCount] = useState(initial);
+
   const increase = () => {
-    setCount((prevState) => prevState + 1);
+    count < stock ? setCount((prev) => prev + 1) : setCount(stock);
   };
 
   const decrease = () => {
-    if (count === 1) {
-      return;
-    } else {
-      setCount((prevState) => prevState - 1);
-    }
+    count === 1 ? setCount(1) : setCount((prev) => prev - 1);
   };
 
   return (
@@ -28,3 +28,5 @@ export default function ItemCount({ count, setCount }) {
     </>
   );
 }
+
+export default ItemCount;

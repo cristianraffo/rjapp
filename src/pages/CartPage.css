@@ -1,7 +1,67 @@
 .cartEmpty {
-    margin-top: 8rem;
+  margin-top: 8rem;
 }
 
 .sumTotal {
-    text-align: center;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.subCart {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(4rem, 11rem) );
+  justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.subCart p {
+  border-bottom: 1px solid black;
+}
+
+
+.clearBtn {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.clearBtn:hover {
+  background: red;
+  border: 1px solid #019fb6;
+  color: white;
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+
+.purchaseBtn {
+  background-color: #019fb6;
+  color: white;
+  border: none;
+  padding: 0.8rem 2.1rem;
+  border-radius: 2rem;
+  text-decoration: none;
+}
+
+.purchaseBtn:hover {
+  background: #ffffff;
+  border: 1px solid #019fb6;
+  color: #191a1d;
+  transform: scale(1.1);
+  transition: all 0.3s ease-out;
+}
+
+@media screen and (max-width: 767px) {
+  .btn .purchaseBtn {
+    margin-bottom: 20px;
+  }
 }

@@ -13,8 +13,10 @@ const HomePage = () => {
   };
 
   return (
-    <div className="wrapper">      
-      <button className="buy-btn" onClick={goToProducts}>Go to products page</button>
+    <div className="wrapper">
+      <button className="buy-btn" onClick={goToProducts}>
+        Go to the store!
+      </button>
     </div>
   );
 };
